@@ -1,0 +1,6 @@
+.venv
+.dbxignore
+.dropbox.external.fileid
+*.pdf
+*.docx
+*.pptx
