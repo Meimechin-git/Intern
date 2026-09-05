@@ -320,7 +320,7 @@ $$
 に対して、まず $0$ でない差分の個数を
 
 $$
-Z(\boldsymbol{\delta}) = \left| \{i\mid\delta_i\neq0\} \right|
+Z(\boldsymbol{\delta}) = \\# \\{i\mid\delta_i\neq0\\}
 $$
 
 と定義する。
