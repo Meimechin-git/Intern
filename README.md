@@ -75,7 +75,7 @@ $$
 
 　次に、回転操作を差分列上の操作へ変換する。回転範囲を $[k,l]$ $(1\leq k\leq l\leq n)$ 、回転角度を $d\in\{1,2,\ldots,s-1\}$ とする。このとき、回転範囲の内部では隣接する立方体が同じだけ回転するため、内部の差分は変化しない。一方、回転範囲の境界にある差分のみが変化する。
 
-　したがって、$1<k\leq l<n$ の場合、
+　したがって、 $1<k\leq l<n$ の場合、
 
 $$
 \delta_{k-1}\leftarrow\delta_{k-1}+d\pmod{s},
@@ -87,7 +87,7 @@ $$
 
 と表すことができる。
 
-　また、$k=1$ の場合は左側の境界に対応する差分が存在しないため $\delta_l$ のみが変化し、$l=n$ の場合は $\delta_{k-1}$ のみが変化する。このように、1回の回転操作によって変化する差分は高々2個である。
+　また、 $k=1$ の場合は左側の境界に対応する差分が存在しないため $\delta_l$ のみが変化し、 $l=n$ の場合は $\delta_{k-1}$ のみが変化する。このように、1回の回転操作によって変化する差分は高々2個である。
 
 　さらに、すべての段の向きが一致している状態では、隣接する段の差分はすべて $0$ となる。したがって、目的状態は差分列
 
@@ -136,13 +136,7 @@ $$
 に従うことが分かる。この式は、
 
 $$
-n-\left\lceil\frac{n}{s}\right\rceil
-=
-n+\left\lfloor-\frac{n}{s}\right\rfloor
-=
-\left\lfloor n-\frac{n}{s}\right\rfloor
-=
-\left\lfloor\frac{n(s-1)}{s}\right\rfloor
+n-\left\lceil\frac{n}{s}\right\rceil = n+\left\lfloor-\frac{n}{s}\right\rfloor = \left\lfloor n-\frac{n}{s}\right\rfloor = \left\lfloor\frac{n(s-1)}{s}\right\rfloor
 $$
 
 と変形できる。
@@ -188,13 +182,7 @@ $$
 　ここで、
 
 $$
-n-\left\lceil\frac{n}{s}\right\rceil
-=
-n+\left\lfloor-\frac{n}{s}\right\rfloor
-=
-\left\lfloor n-\frac{n}{s}\right\rfloor
-=
-\left\lfloor\frac{n(s-1)}{s}\right\rfloor
+n-\left\lceil\frac{n}{s}\right\rceil = n+\left\lfloor-\frac{n}{s}\right\rfloor = \left\lfloor n-\frac{n}{s}\right\rfloor = \left\lfloor\frac{n(s-1)}{s}\right\rfloor
 $$
 
 である。
@@ -272,9 +260,7 @@ $$
 　端点操作では、1つの差分が $\delta_a$ とすると、ある $d\in\{1,2,\ldots,s-1\}$ によって、
 
 $$
-\delta_a\rightarrow \delta_a+d
-\qquad
-\pmod{s}
+\delta_a\rightarrow \delta_a+d \qquad \pmod{s}
 $$
 
 とすることができる。
@@ -292,10 +278,7 @@ $$
 　非端点操作では、2つの差分を $\delta_a,\delta_b \,(a<b)$ とすると、ある $d\in\{1,2,\ldots,s-1\}$ によって、
 
 $$
-(\delta_a,\delta_b)
-\rightarrow
-(\delta_a+d,\delta_b-d)
-\pmod{s}
+(\delta_a,\delta_b) \rightarrow (\delta_a+d,\delta_b-d) \pmod{s}
 $$
 
 と変化する。
@@ -319,12 +302,7 @@ $$
 の条件も満たせば、
 
 $$
-(\delta_a,\delta_b)
-\rightarrow
-(\delta_a+\delta_b,\delta_b-\delta_b)
-\pmod{s}
-\rightarrow
-(0,0)
+(\delta_a,\delta_b) \rightarrow (\delta_a+\delta_b,\delta_b-\delta_b) \pmod{s} \rightarrow (0,0)
 $$
 
 となり、2つの差分を同時に $0$ にできる。
@@ -338,17 +316,13 @@ $$
 　差分列
 
 $$
-\boldsymbol{\delta}
-=
-(\delta_1,\delta_2,\ldots,\delta_{n-1})
+\boldsymbol{\delta} = (\delta_1,\delta_2,\ldots,\delta_{n-1})
 $$
 
 に対して、まず0でない差分の個数を
 
 $$
-Z(\boldsymbol{\delta})
-=
-\#\{i\mid\delta_i\neq0\}
+Z(\boldsymbol{\delta}) = \#\{i\mid\delta_i\neq0\}
 $$
 
 と定義する。
@@ -388,9 +362,7 @@ $$
 　差分の総和を
 
 $$
-S(\boldsymbol{\delta})
-=
-\sum_{i=1}^{n-1}\delta_i
+S(\boldsymbol{\delta}) = \sum_{i=1}^{n-1}\delta_i
 $$
 
 と定義する。ただし、各 $\delta_i$ は
@@ -415,13 +387,7 @@ $$
 
 $$
 \boxed{
-F(\boldsymbol{\delta})
-=
-Z(\boldsymbol{\delta})
--
-\left\lfloor
-\frac{S(\boldsymbol{\delta})}{s}
-\right\rfloor
+F(\boldsymbol{\delta}) = Z(\boldsymbol{\delta}) - \left\lfloor \frac{S(\boldsymbol{\delta})}{s} \right\rfloor
 }
 $$
 
@@ -454,13 +420,7 @@ $$
 　よって、初期状態のポテンシャルは
 
 $$
-F_{\mathrm{start}}
-=
-(n-1)
--
-\left\lfloor
-\frac{n-1}{s}
-\right\rfloor
+F_{\mathrm{start}} = (n-1) - \left\lfloor \frac{n-1}{s} \right\rfloor
 $$
 
 
@@ -469,52 +429,28 @@ $$
 ここで、整数 $n$ に対して
 
 $$
-\left\lceil\frac ns\right\rceil
-=
-1+\left\lfloor\frac{n-1}{s}\right\rfloor
+\left\lceil\frac ns\right\rceil = 1+\left\lfloor\frac{n-1}{s}\right\rfloor
 $$
 
 が成り立つ。したがって、
 
 $$
-(n-1)
--
-\left\lfloor
-\frac{n-1}{s}
-\right\rfloor
+(n-1) - \left\lfloor \frac{n-1}{s} \right\rfloor
 $$
 $$
-=
-(n - 1) - (
-\left\lceil
-\frac{n}{s}
-\right\rceil
--1
-)
+= (n - 1) - ( \left\lceil\frac{n}{s}\right\rceil-1)
 $$
 $$
-=
-n - 
-\left\lceil
-\frac{n}{s}
-\right\rceil
+=n - \left\lceil\frac{n}{s}\right\rceil
 $$
 $$
-=
-\left\lfloor
-\frac{n(s-1)}{s}
-\right\rfloor
+=\left\lfloor\frac{n(s-1)}{s}\right\rfloor
 $$
 
 であるから、
 
 $$
-\boxed{
-F_{\mathrm{start}}
-=
-\left\lfloor
-\frac{n(s-1)}{s}
-\right\rfloor
+\boxed{F_{\mathrm{start}}=\left\lfloor\frac{n(s-1)}{s}\right\rfloor
 }
 $$
 
@@ -587,20 +523,13 @@ $$
 
 である。
 
-　まず、 $\Delta Z = -1$ の場合を考える。この時、 $b = 0$ であるため、差分の総和は $\delta_a$ だけ減少する。$0\leq \delta_a\leq s-1$ なので、 $\Delta\left\lfloor\frac Ss\right\rfloor
+　まず、 $\Delta Z = -1$ の場合を考える。この時、 $b = 0$ であるため、差分の総和は $\delta_a$ だけ減少する。 $0\leq \delta_a\leq s-1$ なので、 $\Delta\left\lfloor\frac Ss\right\rfloor
 $ は高々 $0$ である。  
 
 　したがって、
 
 $$
-\Delta F
-=
-\Delta Z
--
-\Delta
-\left\lfloor\frac Ss\right\rfloor
-\ge
--1
+\Delta F=\Delta Z-\Delta\left\lfloor\frac Ss\right\rfloor\ge-1
 $$
 
 が成り立つ。
@@ -609,14 +538,7 @@ $$
 $ は高々 $1$ であため。
 
 $$
-\Delta F
-=
-\Delta Z
--
-\Delta
-\left\lfloor\frac Ss\right\rfloor
-\ge
--1
+\Delta F=\Delta Z-\Delta\left\lfloor\frac Ss\right\rfloor\ge-1
 $$
 
 が成り立つ。   
@@ -638,16 +560,13 @@ $$
 　非端点操作では、2つの差分 $\delta_a,\delta_b$ 間で $d$ だけ移動させると
 
 $$
-(\delta_a,\delta_b)
-\rightarrow
-(\delta_a+d,\delta_b-d)
-\pmod{s}
+(\delta_a,\delta_b)\rightarrow(\delta_a+d,\delta_b-d)\pmod{s}
 $$
 
 と変化する。このとき、 $|\Delta Z| \leq 2$ が明確である。
 
 　一方、差分の総和 $S$ について考える。非端点操作では、 $\delta_a$ と $\delta_b$ がそれぞれ
-$\delta_a+d$、$\delta_b-d$ に変化し、これらを法として表す。そのため、必要に応じて $s$ の加算または減算が生じる。そのため、操作前後の総和 $S,S'$ の差は、
+$\delta_a+d$ 、 $\delta_b-d$ に変化し、これらを法として表す。そのため、必要に応じて $s$ の加算または減算が生じる。そのため、操作前後の総和 $S,S'$ の差は、
 
 $$
 S'-S\in\{-s,0,s\}
@@ -656,8 +575,7 @@ $$
 のいずれかとなり、
 
 $$
-\Delta\left\lfloor\frac Ss\right\rfloor
-\in\{-1,0,1\}
+\Delta\left\lfloor\frac Ss\right\rfloor\in\{-1,0,1\}
 $$
 
 が成り立つ。
@@ -667,16 +585,10 @@ $$
 　したがって、
 
 $$
-\Delta\left\lfloor\frac Ss\right\rfloor
- = -1
+\Delta\left\lfloor\frac Ss\right\rfloor = -1
 $$
 $$
-\Delta F
-=
-\Delta Z
--
-\Delta
-\left\lfloor\frac Ss\right\rfloor
+\Delta F=\Delta Z-\Delta\left\lfloor\frac Ss\right\rfloor
 =
 -1
 $$
@@ -688,36 +600,23 @@ $$
 　$ d = s-\delta_a$ の場合、
 
 $$
-(\delta_a,\delta_b)
-\rightarrow
-(s,\delta_a+\delta_b-s)
-\pmod{s}
+(\delta_a,\delta_b)\rightarrow(s,\delta_a+\delta_b-s)\pmod{s}
 $$
 
-操作後の $a$ の差分では、必ず $s$ だけ減少し、操作後の $b$ の差分では、$(\delta_a+\delta_b < s)$ で $s$ だけ増加する。よって、$\Delta\left\lfloor\frac Ss\right\rfloor$ は高々 $0$ である。
+操作後の $a$ の差分では、必ず $s$ だけ減少し、操作後の $b$ の差分では、 $(\delta_a+\delta_b < s)$ で $s$ だけ増加する。よって、 $\Delta\left\lfloor\frac Ss\right\rfloor$ は高々 $0$ である。
 
 　$ d = \delta_b$ の場合、
 
 $$
-(\delta_a,\delta_b)
-\rightarrow
-(\delta_a+\delta_b,0)
-\pmod{s}
+(\delta_a,\delta_b)\rightarrow(\delta_a+\delta_b,0)\pmod{s}
 $$
 
-操作後の $a$ の差分では、 $(\delta_a+\delta_b \ge s)$ で $s$ だけ減少し、操作後の $b$ の差分は、必ず $0$ のままである。よって、$\Delta\left\lfloor\frac Ss\right\rfloor$ は高々 $0$ である。
+操作後の $a$ の差分では、 $(\delta_a+\delta_b \ge s)$ で $s$ だけ減少し、操作後の $b$ の差分は、必ず $0$ のままである。よって、 $\Delta\left\lfloor\frac Ss\right\rfloor$ は高々 $0$ である。
 
 　したがって、
 
 $$
-\Delta F
-=
-\Delta Z
--
-\Delta
-\left\lfloor\frac Ss\right\rfloor
-\ge
--1
+\Delta F=\Delta Z-\Delta\left\lfloor\frac Ss\right\rfloor\ge-1
 $$
 
 が成り立つ。
@@ -726,14 +625,7 @@ $$
 $ は高々 $1$ であるため、
 
 $$
-\Delta F
-=
-\Delta Z
--
-\Delta
-\left\lfloor\frac Ss\right\rfloor
-\ge
--1
+\Delta F=\Delta Z-\Delta\left\lfloor\frac Ss\right\rfloor\ge-1
 $$
 
 が成り立つ。   
@@ -755,11 +647,7 @@ $$
 　初期状態では、
 
 $$
-F_{\mathrm{start}}
-=
-\left\lfloor
-\frac{n(s-1)}s
-\right\rfloor
+F_{\mathrm{start}}=\left\lfloor\frac{n(s-1)}s\right\rfloor
 $$
 
 であり、目的状態では
@@ -773,9 +661,7 @@ $$
 　したがって、初期状態から目的状態まで $T$ 手で到達したとすると、1手あたりのポテンシャルの減少量が高々1であることから、
 
 $$
-T
-\geq
-F_{\mathrm{start}}-F_{\mathrm{goal}}
+T\geq F_{\mathrm{start}}-F_{\mathrm{goal}}
 $$
 
 が成り立つ。
@@ -890,10 +776,8 @@ $$
 　さらに、端点操作か非端点操作を用いれば、0の差分を1つ増やすことができる点。また、特定の条件下で非端点操作を行うと、0の差分を2つ増やすことができる点。この2点に着目し、ポテンシャル関数
 
 $$
-F(\boldsymbol{\delta})
-=
-Z(\boldsymbol{\delta})
--
+F(\boldsymbol{\delta})=
+Z(\boldsymbol{\delta})-
 \left\lfloor
 \frac{S(\boldsymbol{\delta})}{s}
 \right\rfloor
