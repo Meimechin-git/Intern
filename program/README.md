@@ -79,8 +79,6 @@ $$
 
 となる。
 
----
-
 ### 2. 幅優先探索
 
 　解状態から、可能なすべての回転操作を1手ずつ適用して探索する。
@@ -94,8 +92,6 @@ $$
 $$
 
 を計算することで、最大最小手数を求めることができる。これについて、`cube_bfs.py` では、探索した状態とその最小手数を辞書で管理している。
-
----
 
 ## `cube_bfs.py` から `cube_updated.py` への改善
 
@@ -141,8 +137,6 @@ depth_arr = bytearray([0xff] * total)
 に分けた。
 
 　これは、タワーの端を含む操作では1つの差分だけが変化し、端を含まない操作では2つの差分が変化するという、差分列上の操作の性質に対応している。
-
----
 
 ## 実行方法
 
@@ -280,11 +274,7 @@ $1109.3$ 秒から $312.46$ 秒と、約3.6倍高速になった。
 
 $$
 \boxed{
-D(n,s)
-=
-n-\left\lceil\frac ns\right\rceil
-=
-\left\lfloor\frac{n(s-1)}s\right\rfloor
+D(n,s) = n-\left\lceil\frac ns\right\rceil = \left\lfloor\frac{n(s-1)}s\right\rfloor
 }
 $$
 
